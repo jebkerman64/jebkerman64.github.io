@@ -27,6 +27,36 @@ discord: @andagj</br>
 	<a href="fish.html">this link doesnt work></a></br>
   <a href="sakana.html">this link works></a></br>
 	<a href="pickleclone/pickleshrine.htm">pickle shrine></a></br>
+
+
+
+
+
+  </br></br><p>you have visited this site <span id="count">0</span> times. <span id="message1"></span></p>
+
+  <script>
+    let visits = localStorage.getItem("visits");
+
+    if (visits === null) {
+      visits = 1;
+    } else {
+      visits = parseInt(visits) + 1;
+    }
+
+    localStorage.setItem("visits", visits);
+    document.getElementById("count").textContent = visits;
+    if(parseInt(visits)==0){
+      document.getElementById("message1").textContent = "reload the page to increment";
+    }
+    if(parseInt(visits)>10){
+      document.getElementById("message1").textContent = "waiter! waiter! more reloads please.";
+    }
+    if(parseInt(visits)>50){
+      document.getElementById("message1").textContent = "shrimply fantastic.";
+    }
+  </script>
 </body>
+
+
 
 </html>
